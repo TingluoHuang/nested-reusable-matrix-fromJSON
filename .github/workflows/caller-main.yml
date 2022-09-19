@@ -21,8 +21,8 @@ jobs:
     steps:
       - run: ls
 
-#  call-A:
-#    needs: [ matrix-gen ]
-#    uses: ./.github/workflows/called-A.yml
-#    with:
-#      matrix-input: ${{ needs.matrix-gen.outputs.output-matrix }}
+  call-A:
+    needs: [ matrix-gen ]
+    uses: ./.github/workflows/called-A.yml
+    with:
+      matrix-input: ${{ needs.matrix-gen.outputs.output-matrix }}
